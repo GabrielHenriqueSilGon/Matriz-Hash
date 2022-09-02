@@ -126,7 +126,7 @@ Faztxt::fazTransposta (unordered_map<keyij, int> matriz, int linhas, int colunas
 
   }
 
-  mostraMatriz(matriz, linhas);
+  mostraMatriz(transposta, linhas);
   
   int soma = 0;
   int new_i = 0;
