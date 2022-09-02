@@ -132,6 +132,7 @@ Faztxt::fazTransposta (unordered_map<keyij, int> matriz, int linhas, int colunas
   int new_i = 0;
   int new_j = 0;
   int aux;
+  int counti = 0;
 
 
 
@@ -143,7 +144,9 @@ Faztxt::fazTransposta (unordered_map<keyij, int> matriz, int linhas, int colunas
           
           new_j++;
           if (!(new_j < linhas)){
-            new_i++; 
+            new_j = 0; counti++;
+             if (!(new_j < linhas)){
+              new_i++; new_j = 0;
           }
           keyij hilp;
           hilp.i = new_i;
@@ -154,10 +157,10 @@ Faztxt::fazTransposta (unordered_map<keyij, int> matriz, int linhas, int colunas
 
     int aux = iit->first->i; 
     for(iiit = transposta.begin(); iiit != transposta.end(); ++iiit){
-       if(iit->first.i == iiit->first.j){
+       if(counti == iiit->first.j){
         soma = soma + (iit->second * iiit->second);
        }
-    }
+      
     }
     
     cout << "A matriz resposta é:\n";
